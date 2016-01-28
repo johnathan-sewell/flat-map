@@ -1,0 +1,12 @@
+{
+  "name": "flat-map",
+  "version": "0.0.0",
+  "author": "Jonathan Sewell",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "eslint": "1.10.3"
+  }
+}
