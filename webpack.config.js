@@ -11,6 +11,8 @@ module.exports = {
         publicPath: '/',
         filename: 'bundle.js'
     },
+
+    //tell webpack how to handle various file types:
     module: {
         loaders: [{
             test: /\.js$/,
@@ -19,6 +21,12 @@ module.exports = {
         }, {
             test: /\.html$/,
             loader: 'file?name=[name].[ext]',
+        }, {
+            test: /\.css$/,
+            loader: 'style!css' //runs  style and css loaders
+        }, {
+            test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
+            loader: 'url-loader?limit=30000&name=[name].[ext]'
         }]
     },
     resolve: {
@@ -26,4 +34,3 @@ module.exports = {
     },
     devtool: 'source-map'
 };
-
