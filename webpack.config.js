@@ -27,6 +27,10 @@ module.exports = {
         }, {
             test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
             loader: 'url-loader?limit=30000&name=[name].[ext]'
+        }, {
+            //tell webpack we need React! http://stackoverflow.com/questions/33037113/react-webpack-undefined-react-in-console
+            test: require.resolve('react'),
+            loader: 'expose?React'
         }]
     },
     resolve: {

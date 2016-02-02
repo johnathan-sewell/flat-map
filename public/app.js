@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom';
-// import React from 'react';
-import MapComponent from './components/MapComponent';
+import React from 'react';
+import Map from './components/Map';
 
 import './css/semantic.css';
 
 ReactDOM.render(
-    MapComponent,
+    <Map/>,
     document.getElementById('app')
 );
