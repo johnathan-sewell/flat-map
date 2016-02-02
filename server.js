@@ -18,9 +18,9 @@ const app = express();
 const server = http.createServer(app);
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-app.use(express.static('public'));
+app.use(express.static('build'));
 
 app.use(function(req, res) {
     res.status(404).send('Oops, that page doesn\'t exist');
