@@ -5,8 +5,7 @@ const http = require('http');
 const path = require('path');
 
 const appConfig = {
-    appPort: 3000,
-    environment: process.env.NODE_ENV
+    appPort: 3000
 };
 
 const logger = {
@@ -17,22 +16,6 @@ const logger = {
 
 const app = express();
 const server = http.createServer(app);
-
-if (appConfig.environment === 'development') {
-    const webpackDevMiddleware = require('webpack-dev-middleware');
-    const webpack = require('webpack');
-
-    const config = require('./webpack.config.js');
-    const compiler = webpack(config);
-
-    app.use(webpackDevMiddleware(compiler, {
-        quiet: false,
-        noInfo: false,
-        stats: {
-            colors: true,
-        }
-    }));
-}
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
