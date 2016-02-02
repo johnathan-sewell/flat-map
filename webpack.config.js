@@ -2,9 +2,10 @@
 
 module.exports = {
     context: __dirname,
-    entry: [
-        './public/app.js'
-    ],
+    entry: {
+        javascript: './public/app.js',
+        html: './public/index.html'
+    },
     output: {
         path: `${__dirname}/build`,
         publicPath: '/',
@@ -15,6 +16,9 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/,
             loader: 'babel-loader'
+        }, {
+            test: /\.html$/,
+            loader: 'file?name=[name].[ext]',
         }]
     },
     resolve: {
@@ -22,3 +26,4 @@ module.exports = {
     },
     devtool: 'source-map'
 };
+
