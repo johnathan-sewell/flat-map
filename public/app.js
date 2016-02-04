@@ -1,10 +1,24 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import Map from './components/Map';
+import { createStore } from 'redux';
 
-import './css/semantic.css';
+// import $  from './lib/jquery-2.2.0';    //just using this for .ajax - replace?
+import './lib/css/semantic.css';
 
-ReactDOM.render(
-    <Map/>,
-    document.getElementById('app')
+// import { receiveProperties } from './actions/actions';
+import rootReducer from './reducers/rootReducer';
+import App from './containers/App';
+
+
+ReactDOM.render(<App store={createStore(rootReducer)} / > ,
+    document.getElementById('root')
 );
+
+// $.getJSON('data/data1.json', data => {
+//     store.dispatch(receiveProperties(data));
+// });
+
+// store.dispatch(receiveProperties([{id: 3}]));
+
+// unsubscribe();
+

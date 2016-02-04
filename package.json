@@ -4,7 +4,7 @@
   "author": "Jonathan Sewell",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon .",
+    "nodemon": "nodemon --ignore build/ --ignore public/ --verbose",
     "webpack": "webpack",
     "webpack-watch": "webpack --watch --colors --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,6 +26,7 @@
     "webpack": "1.12.12"
   },
   "devDependencies": {
+    "eslint-plugin-react": "3.16.1",
     "nodemon": "1.8.1"
   }
 }
