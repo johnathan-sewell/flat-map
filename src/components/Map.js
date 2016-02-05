@@ -9,11 +9,11 @@ export default class Map extends React.Component {
 
     render() {
         return (
-            <div>Put a better map here!</div>
+            <div>
+                {this.props.properties.map(property => (
+                    <div key={property.propertyId}>{property.address1}</div>
+                ))}
+            </div>
         );
     }
 }
-
-// export default () => {
-//     return <div>Put a map here</div>;
-// };

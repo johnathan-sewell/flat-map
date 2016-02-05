@@ -1,8 +1,7 @@
 import React from 'react';
 import * as actionCreators from '../actions/actionCreators';
 import * as apiClient from '../apiClient';
-
-import Map from './Map';
+import Map from '../components/Map';
 import Menu from '../components/Menu';
 
 export default class App extends React.Component {
@@ -29,15 +28,14 @@ export default class App extends React.Component {
         }, errorMessage => {
             this.props.store.dispatch(actionCreators.failedToReceiveProperties(errorMessage));
         });
-
     }
 
     render() {
-        const state = this.props.store.getState();
+        const reduxState = this.props.store.getState();
         return (
             <div className="App">
-                <Menu dataSourceId={state.dataSourceId} onSelectDataSource={this._handleSelectDataSource} />
-                <Map store={this.props.store}/>
+                <Menu dataSourceId={reduxState.dataSourceId} onSelectDataSource={this._handleSelectDataSource} />
+                <Map properties={reduxState.properties}/>
             </div>
         );
     }
