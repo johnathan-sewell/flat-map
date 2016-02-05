@@ -6,9 +6,6 @@ export function selectDataSource(dataSourceId) {
         dataSourceId
     };
 }
-
-
-
 export function requestProperties() {
     return {
         type: 'REQUEST_PROPERTIES'

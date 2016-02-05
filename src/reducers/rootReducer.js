@@ -7,7 +7,7 @@ import * as actionTypes from '../constants/actionTypes';
 
 const initialState = {
     properties: [],
-    dataSourceId: 'json1'
+    dataSourceId: 'data1'
 };
 
 function appReducer(state = initialState, action) {

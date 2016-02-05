@@ -2,7 +2,12 @@
 <head>
 </head>
     <body>
+        <link rel="stylesheet" type="text/css" href="css/semantic.css">
+
         <div id="root"></div>
-        <script src="bundle.js"></script>
+
+        <!-- script load asyncronously but execute in order, bottom of page to avoid blocking page rendering -->
+        <script src="bower_components/fetch/fetch.js"></script>
+        <script src="build/bundle.js"></script>
     </body>
 </html>

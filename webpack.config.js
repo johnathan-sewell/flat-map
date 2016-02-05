@@ -1,13 +1,11 @@
 'use strict';
-
 module.exports = {
     context: __dirname,
     entry: {
-        javascript: './public/app.js',
-        html: './public/index.html'
+        javascript: './src/app.js'
     },
     output: {
-        path: `${__dirname}/build`,
+        path: `${__dirname}/public/build`,
         publicPath: '/',
         filename: 'bundle.js'
     },
@@ -18,15 +16,6 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/,
             loader: 'babel-loader'
-        }, {
-            test: /\.html$/,
-            loader: 'file?name=[name].[ext]',
-        }, {
-            test: /\.css$/,
-            loader: 'style!css' //runs  style and css loaders
-        }, {
-            test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
-            loader: 'url-loader?limit=30000&name=[name].[ext]'
         }, {
             //tell webpack we need React! http://stackoverflow.com/questions/33037113/react-webpack-undefined-react-in-console
             test: require.resolve('react'),

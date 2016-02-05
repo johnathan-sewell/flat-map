@@ -21,9 +21,9 @@ export default class Menu extends React.Component {
         return (
             <div className='ui stackable container menu'>
                 <div>{this.props.dataSourceId}</div>
-                <a className={this._getCssClass('json1')} data-id='json1' onClick={this._handleClick}>JSON 1</a>
-                <a className={this._getCssClass('json2')} data-id='json2' onClick={this._handleClick}>JSON 2</a>
-                <a className={this._getCssClass('json3')} data-id='json3' onClick={this._handleClick}>JSON 3</a>
+                <a className={this._getCssClass('data1')} data-id='data1' onClick={this._handleClick}>Data Source 1</a>
+                <a className={this._getCssClass('data2')} data-id='data2' onClick={this._handleClick}>Data Source 2</a>
+                <a className={this._getCssClass('data3')} data-id='data3' onClick={this._handleClick}>Data Source 3</a>
             </div>
         );
     }

@@ -1,8 +1,9 @@
 import React from 'react';
 import * as actionCreators from '../actions/actionCreators';
+import * as apiClient from '../apiClient';
 
 import Map from './Map';
-import Menu from './Menu';
+import Menu from '../components/Menu';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -22,6 +23,13 @@ export default class App extends React.Component {
 
     _handleSelectDataSource(dataSourceId) {
         this.props.store.dispatch(actionCreators.selectDataSource(dataSourceId));
+
+        apiClient.fetchProperties(dataSourceId, properties => {
+            this.props.store.dispatch(actionCreators.receiveProperties(properties));
+        }, errorMessage => {
+            this.props.store.dispatch(actionCreators.failedToReceiveProperties(errorMessage));
+        });
+
     }
 
     render() {
