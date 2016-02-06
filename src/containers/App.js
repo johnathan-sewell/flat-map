@@ -10,6 +10,8 @@ export default class App extends React.Component {
         this.state = {};
 
         this._handleSelectDataSource = this._handleSelectDataSource.bind(this);
+
+        this._fetchProperties('data1');
     }
 
     componentDidMount() {
@@ -20,14 +22,18 @@ export default class App extends React.Component {
         this.unsubscribe();
     }
 
-    _handleSelectDataSource(dataSourceId) {
-        this.props.store.dispatch(actionCreators.selectDataSource(dataSourceId));
-
+    _fetchProperties(dataSourceId) {
         apiClient.fetchProperties(dataSourceId, properties => {
             this.props.store.dispatch(actionCreators.receiveProperties(properties));
         }, errorMessage => {
             this.props.store.dispatch(actionCreators.failedToReceiveProperties(errorMessage));
         });
+    }
+
+    _handleSelectDataSource(dataSourceId) {
+        this.props.store.dispatch(actionCreators.selectDataSource(dataSourceId));
+
+        this._fetchProperties(dataSourceId);
     }
 
     render() {
@@ -40,5 +46,3 @@ export default class App extends React.Component {
         );
     }
 }
-// App.propTypes = { initialCount: React.PropTypes.number };
-// App.defaultProps = { initialCount: 0 };
