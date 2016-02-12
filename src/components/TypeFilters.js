@@ -18,14 +18,12 @@ export default class TypeFilters extends React.Component {
     render() {
         const noResultsMessage =
             <div className="ui info message">
-                <div className="header">
-                    Sorry, there are no properties to show.
-                </div>
+                <div className="header">Sorry, there are no properties to show.</div>
                 <p>Try adjusting the filters.</p>
             </div>;
 
         const createInput = filter =>
-                <div className="column" key={filter.id}>
+                <div className="field" key={filter.id}>
                     <div className="ui toggle checkbox">
                         <input type="checkbox"
                             checked={filter.checked ? 'checked' : ''}
@@ -37,9 +35,13 @@ export default class TypeFilters extends React.Component {
                 </div>;
 
         return (
-            <div className='Filters ui four column stackable grid'>
-                {this.props.filters.map(createInput)}
-                {this.props.visiblePropertiesCount === 0 ? noResultsMessage : ''}
+            <div className='Filters ui form'>
+                <div className='inline fields'>
+                    {this.props.filters.map(createInput)}
+                </div>
+                <div className='fields'>
+                    {this.props.visiblePropertiesCount === 0 ? noResultsMessage : ''}
+                </div>
             </div>
         );
     }

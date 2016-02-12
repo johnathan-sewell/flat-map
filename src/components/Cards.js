@@ -36,10 +36,10 @@ export default class Cards extends React.Component {
                             </div>
                             <div className="statistic">
                                 <div className="value">
-                                    {property.price / 1000}
+                                    {property.price}
                                 </div>
                                 <div className="label">
-                                    thousand DKK
+                                    DKK
                                 </div>
                             </div>
                         </div>

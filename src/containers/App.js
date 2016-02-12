@@ -54,10 +54,6 @@ export default class App extends React.Component {
     }
     render() {
         const state = this.props.store.getState();
-        const cardOverflowStyles = {
-            height: '100%',
-            overflowY: 'scroll'
-        };
 
         const mapStyles = {
             padding: 0
@@ -65,21 +61,33 @@ export default class App extends React.Component {
 
         return (
 
-            <div className="App ui padded grid">
+            <div className="App ui padded stackable mobile reversed equal width grid">
 
-                <div className="eight wide column" style={mapStyles}>
+                <div className="column" style={mapStyles}>
                     <Map properties={this._getVisibleProperties()}/>
                 </div>
 
-                <div className="eight wide column" style={cardOverflowStyles}>
-                        <Menu dataSourceId={state.dataSourceId}
-                            handleSelectDataSource={this._handleSelectDataSource} />
-
-                        <TypeFilters filters={state.filters}
-                            visiblePropertiesCount={this._getVisibleProperties().length}
-                            handleFilter={this._handleFilter} />
-
-                        <Cards properties={this._getVisibleProperties()}/>
+                <div className="column">
+                    <div className='ui stackable grid'>
+                        <div className="row">
+                            <div className="column">
+                                <Menu dataSourceId={state.dataSourceId}
+                                    handleSelectDataSource={this._handleSelectDataSource} />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="column">
+                                <TypeFilters filters={state.filters}
+                                    visiblePropertiesCount={this._getVisibleProperties().length}
+                                    handleFilter={this._handleFilter} />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="computer only tablet only column">
+                                <Cards properties={this._getVisibleProperties()}/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

@@ -19,7 +19,7 @@ export default class Menu extends React.Component {
 
     render() {
         return (
-            <div className='ui three item stackable tabular menu'>
+            <div className='ui three item menu'>
                 <a className={this._getCssClass('data1')} data-id='data1' onClick={this._handleClick}>Data Source 1</a>
                 <a className={this._getCssClass('data2')} data-id='data2' onClick={this._handleClick}>Data Source 2</a>
                 <a className={this._getCssClass('data3')} data-id='data3' onClick={this._handleClick}>Data Source 3</a>
