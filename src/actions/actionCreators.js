@@ -12,9 +12,16 @@ export function requestProperties() {
     };
 }
 
-export function receiveProperties(json) {
+export function receiveProperties(properties) {
     return {
         type: 'RECEIVE_PROPERTIES',
-        properties: json
+        properties
+    };
+}
+
+export function filter(filter) {
+    return {
+        type: 'APPLY_FILTER',
+        filter
     };
 }
