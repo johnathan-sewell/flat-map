@@ -20,6 +20,12 @@ npm run dev
 
 This will build, run and monitor the frontend app.
 
+Run the tests:
+
+```bash
+npm run test
+```
+
 ## Performance
 
 Server responses are compressed using the [compression middleware](https://www.npmjs.com/package/compression)
