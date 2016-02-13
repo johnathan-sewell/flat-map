@@ -15,14 +15,15 @@ module.exports = {
     plugins: PRODUCTION ? [
         new webpack.optimize.UglifyJsPlugin({
             minimize: true
-        }), new webpack.DefinePlugin({ //http://facebook.github.io/react/docs/getting-started.html#using-react-from-npm
+        }), new webpack.DefinePlugin({
+            // http://facebook.github.io/react/docs/getting-started.html#using-react-from-npm
             'process.env': {
                 NODE_ENV: JSON.stringify('production')
             }
         })
     ] : [],
 
-    //tell webpack how to handle various file types:
+    // tell webpack how to handle various file types:
     module: {
         loaders: [{
             test: /\.js$/,
