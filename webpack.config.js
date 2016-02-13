@@ -1,4 +1,7 @@
 'use strict';
+const webpack = require('webpack');
+const PRODUCTION = process.env.NODE_ENV === 'production';
+
 module.exports = {
     context: __dirname,
     entry: {
@@ -9,6 +12,15 @@ module.exports = {
         publicPath: '/',
         filename: 'bundle.js'
     },
+    plugins: PRODUCTION ? [
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true
+        }), new webpack.DefinePlugin({ //http://facebook.github.io/react/docs/getting-started.html#using-react-from-npm
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
+        })
+    ] : [],
 
     //tell webpack how to handle various file types:
     module: {
