@@ -9,7 +9,7 @@
     "nodemon": "nodemon --ignore build/ --ignore public/ --verbose",
     "webpack": "webpack",
     "webpack-watch": "webpack --watch --colors --progress",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers js:babel-core/register --recursive"
   },
   "dependencies": {
     "babel-core": "6.4.5",
@@ -28,6 +28,8 @@
   "devDependencies": {
     "bower": "1.7.7",
     "eslint-plugin-react": "3.16.1",
-    "nodemon": "1.8.1"
+    "mocha": "2.4.5",
+    "nodemon": "1.8.1",
+    "sinon": "1.17.3"
   }
 }

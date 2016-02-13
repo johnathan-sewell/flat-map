@@ -8,18 +8,18 @@ export function selectDataSource(dataSourceId) {
 }
 export function requestProperties() {
     return {
-        type: 'REQUEST_PROPERTIES'
+        type: actionTypes.REQUEST_PROPERTIES
     };
 }
 
 export function receiveProperties(properties) {
     return {
-        type: 'RECEIVE_PROPERTIES',
+        type: actionTypes.RECEIVE_PROPERTIES,
         properties
     };
 }
 
-export function filter(filter) {
+export function applyFilter(filter) {
     return {
         type: 'APPLY_FILTER',
         filter

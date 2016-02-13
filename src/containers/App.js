@@ -39,7 +39,7 @@ export default class App extends React.Component {
     }
 
     _handleFilter(filter) {
-        this.props.store.dispatch(actionCreators.filter(filter));
+        this.props.store.dispatch(actionCreators.applyFilter(filter));
     }
 
     _getVisibleProperties() {
