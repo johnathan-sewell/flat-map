@@ -5,9 +5,7 @@ const compression = require('compression');
 const http = require('http');
 const path = require('path');
 
-const appConfig = {
-    appPort: 3000
-};
+const appPort = process.env.PORT || 3000;
 
 const logger = {
     /*eslint-disable no-console*/
@@ -33,6 +31,6 @@ app.use(function(req, res) {
     res.status(404).send('Oops, that page doesn\'t exist');
 });
 
-server.listen(appConfig.appPort, () => {
-    logger.info(`server listening on port ${appConfig.appPort}`);
+server.listen(appPort, () => {
+    logger.info(`server listening on port ${appPort}`);
 });
