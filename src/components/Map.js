@@ -35,7 +35,7 @@ export default class Map extends React.Component {
                 },
                 properties: {
                     title: `${property.propertyType.name} - ${property.address1}`,
-                    description:  `${property.totalNumberOfRooms} ${property.totalNumberOfRooms === 1 ? 'Room' : 'Rooms'} - ${property.propertySizeAdvertized}m<sup>2</sup> - ${property.price}DKK`,
+                    description:  `${property.totalNumberOfRooms} ${property.totalNumberOfRooms === 1 ? 'Room' : 'Rooms'} - ${property.propertySizeAdvertized}m<sup>2</sup> - ${property.price} DKK`,
                     'marker-color': '#3ca0d3',
                     'marker-size': 'large',
                     'marker-symbol': 'building'

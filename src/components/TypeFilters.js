@@ -23,21 +23,20 @@ export default class TypeFilters extends React.Component {
             </div>;
 
         const createInput = filter =>
-                <div className='inline fields' key={filter.id}>
-                    <div className="ui toggle checkbox">
-                        <input type="checkbox"
-                            checked={filter.checked ? 'checked' : ''}
-                            value={filter.id}
-                            onChange={this._handleChange}>
-                        </input>
-                        <label>{filter.name}</label>
-                    </div>
+                <div className="ui toggle checkbox" key={filter.id}>
+                    <input type="checkbox"
+                        checked={filter.checked ? 'checked' : ''}
+                        value={filter.id}
+                        id={filter.id}
+                        onChange={this._handleChange}>
+                    </input>
+                    <label htmlFor={filter.id}>{filter.name}</label>
                 </div>;
 
         return (
             <div className='Filters ui grid'>
                 {this.props.filters.map(createInput)}
-                <div className='fields'>
+                <div className="sixteen wide column">
                     {this.props.visiblePropertiesCount === 0 ? noResultsMessage : ''}
                 </div>
             </div>
