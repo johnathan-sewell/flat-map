@@ -4,12 +4,11 @@
   "author": "Jonathan Sewell",
   "main": "server.js",
   "scripts": {
-    "installdeps": "npm install && bower install",
-    "prestart": "export NODE_ENV='production' && npm run installdeps && webpack",
+    "postintall": "bower install",
+    "prestart": "export NODE_ENV='production' && webpack",
     "start": "node .",
-    "dev": "npm run installdeps && npm run webpack-watch",
+    "dev": "webpack --watch --colors --progress",
     "nodemon": "nodemon --ignore build/ --ignore public/ --verbose",
-    "webpack-watch": "webpack --watch --colors --progress",
     "test": "mocha --compilers js:babel-core/register --recursive"
   },
   "dependencies": {
