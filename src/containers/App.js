@@ -61,31 +61,25 @@ export default class App extends React.Component {
 
         return (
 
-            <div className="App ui padded stackable mobile reversed equal width grid">
+            <div className="App ui padded stackable mobile reversed grid">
 
-                <div className="column" style={mapStyles}>
+                <div className="ten wide column" style={mapStyles}>
                     <Map properties={this._getVisibleProperties()}/>
                 </div>
 
-                <div className="column">
+                <div className="six wide column">
                     <div className='ui stackable grid'>
-                        <div className="row">
-                            <div className="column">
-                                <Menu dataSourceId={state.dataSourceId}
-                                    handleSelectDataSource={this._handleSelectDataSource} />
-                            </div>
+                        <div className="sixteen wide column">
+                            <Menu dataSourceId={state.dataSourceId}
+                                handleSelectDataSource={this._handleSelectDataSource} />
                         </div>
-                        <div className="row">
-                            <div className="column">
-                                <TypeFilters filters={state.filters}
-                                    visiblePropertiesCount={this._getVisibleProperties().length}
-                                    handleFilter={this._handleFilter} />
-                            </div>
+                        <div className="sixteen wide column">
+                            <TypeFilters filters={state.filters}
+                                visiblePropertiesCount={this._getVisibleProperties().length}
+                                handleFilter={this._handleFilter} />
                         </div>
-                        <div className="row">
-                            <div className="computer only tablet only column">
-                                <Cards properties={this._getVisibleProperties()}/>
-                            </div>
+                        <div className="computer only tablet only sixteen wide column">
+                            <Cards properties={this._getVisibleProperties()}/>
                         </div>
                     </div>
                 </div>
