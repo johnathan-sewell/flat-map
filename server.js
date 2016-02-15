@@ -1,9 +1,12 @@
 'use strict';
 const express = require('express');
+const compression = require('compression');
 const http = require('http');
 
 const appPort = process.env.PORT || 3000;
 const app = express();
+app.use(compression());
+
 const server = http.createServer(app);
 
 app.use('/data', express.static('data'));
