@@ -9,6 +9,8 @@ app.use(compression());
 
 const server = http.createServer(app);
 
+app.use(express.static('public'));
+
 app.use('/data', express.static('data'));
 
 app.use(function(req, res) {
