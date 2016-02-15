@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "nodemon": "nodemon",
-    "dev": "webpack --watch --colors --progress"
+    "dev": "webpack --watch --colors --progress",
+    "test": "mocha --compilers js:babel-core/register --recursive"
   },
   "author": "Jonathan Sewell",
   "license": "ISC",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "eslint": "2.1.0",
     "eslint-plugin-react": "3.16.1",
+    "mocha": "2.4.5",
     "nodemon": "1.8.1"
   }
 }
