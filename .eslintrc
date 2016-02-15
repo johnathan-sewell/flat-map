@@ -34,7 +34,7 @@
         "no-trailing-spaces": 2,
         "eol-last": 2,
 
-        "space-after-keywords": [2, "always"],
+        "keyword-spacing": [2, "always"],
         "space-before-blocks": [2, "always"],
 
         "arrow-spacing": [2, {"before": true, "after": true}],
