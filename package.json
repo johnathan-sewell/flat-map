@@ -4,7 +4,8 @@
   "description": "Just and example app",
   "main": "server.js",
   "scripts": {
-    "nodemon": "nodemon",
+    "prestart": "webpack",
+    "start": "node .",
     "dev": "webpack --watch --colors --progress",
     "test": "mocha --compilers js:babel-core/register --recursive"
   },
