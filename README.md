@@ -3,10 +3,13 @@
 ## Running this App
 
  * requires Node v4.2.6
+ * requires Chrome 42 (or above) for [fetch support](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+
+Running on Heroku at [flat-map.herokuapp.com](https://flat-map.herokuapp.com/).
 
 ## Developing
 
-Node v4.2.6 must be installed. If you're using NVM, just run `nvm install` in the project root.
+Node 4.2.6 must be installed. If you're using NVM, just run `nvm install` in the project root.
 
 Start the server:
 
@@ -14,4 +17,22 @@ Start the server:
 npm run nodemon
 ```
 
-This will run and monitor the Node.js Express server which serves JSON data.
+This will run and monitor the Node.js Express server.
+
+Start the frontend app:
+
+```bash
+npm run dev
+```
+
+This will build, run and monitor the frontend app.
+
+Run the tests:
+
+```bash
+npm run test
+```
+
+## Performance
+
+Server responses are compressed using the [compression middleware](https://www.npmjs.com/package/compression)
