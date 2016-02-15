@@ -4,15 +4,20 @@
   "description": "Just and example app",
   "main": "server.js",
   "scripts": {
-    "nodemon": "nodemon"
+    "nodemon": "nodemon",
+    "dev": "webpack --watch --colors --progress"
   },
   "author": "Jonathan Sewell",
   "license": "ISC",
   "dependencies": {
     "compression": "1.6.1",
-    "express": "4.13.4"
+    "express": "4.13.4",
+    "webpack": "1.12.13"
   },
   "devDependencies": {
+    "babel-core": "6.5.2",
+    "babel-loader": "6.2.2",
+    "babel-preset-es2015": "6.5.0",
     "nodemon": "1.8.1"
   }
 }
