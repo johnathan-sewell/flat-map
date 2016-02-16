@@ -7,9 +7,22 @@
 
 Running on Heroku at [flat-map.herokuapp.com](https://flat-map.herokuapp.com/).
 
+To run the app:
+
+```bash
+npm install
+npm run start
+```
+
 ## Developing
 
 Node 4.2.6 must be installed. If you're using NVM, just run `nvm install` in the project root.
+
+Install dependencies:
+
+```bash
+npm install
+```
 
 Start the server:
 
@@ -17,7 +30,7 @@ Start the server:
 npm run nodemon
 ```
 
-This will run and monitor the Node.js Express server.
+This will run the Node.js Express server
 
 Start the frontend app:
 
@@ -25,14 +38,10 @@ Start the frontend app:
 npm run dev
 ```
 
-This will build, run and monitor the frontend app.
+This will build, run the frontend app.
 
 Run the tests:
 
 ```bash
 npm run test
 ```
-
-## Performance
-
-Server responses are compressed using the [compression middleware](https://www.npmjs.com/package/compression)
