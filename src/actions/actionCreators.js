@@ -6,11 +6,6 @@ export function selectDataSource(dataSourceId) {
         dataSourceId
     };
 }
-export function requestProperties() {
-    return {
-        type: actionTypes.REQUEST_PROPERTIES
-    };
-}
 
 export function receiveProperties(properties) {
     return {

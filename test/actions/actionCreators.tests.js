@@ -16,14 +16,6 @@ describe('actionCreators', () => {
         });
     });
 
-    describe('requestProperties', () => {
-        const action = actionCreators.requestProperties();
-
-        it('creates an action of type REQUEST_PROPERTIES', () => {
-            assert.equal(action.type, actionTypes.REQUEST_PROPERTIES);
-        });
-    });
-
     describe('receiveProperties', () => {
         const propertyFixture = {
             propertyType: {

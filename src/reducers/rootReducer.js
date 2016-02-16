@@ -32,12 +32,12 @@ function appReducer(state = initialState, action) {
             return Object.assign({}, state, {
                 dataSourceId: action.dataSourceId
             });
-        case 'RECEIVE_PROPERTIES':
+        case actionTypes.RECEIVE_PROPERTIES:
             //don't mutate state (use Object.assign)
             return Object.assign({}, state, {
                 properties: action.properties
             });
-        case 'APPLY_FILTER':
+        case actionTypes.APPLY_FILTER:
             return Object.assign({}, state, {
                 filters: state.filters.map(filter => {
                     if (filter.id === action.filter.id) {
