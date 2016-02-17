@@ -24,21 +24,17 @@ Install dependencies:
 npm install
 ```
 
-Start the server:
+Run the Node.js Express server:
 
 ```bash
 npm run nodemon
 ```
 
-This will run the Node.js Express server
-
-Start the frontend app:
+Build and run the frontend app:
 
 ```bash
 npm run dev
 ```
-
-This will build, run the frontend app.
 
 Run the tests:
 
