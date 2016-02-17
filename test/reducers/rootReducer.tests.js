@@ -1,4 +1,5 @@
 import assert from 'assert';
+import deepFreeze from 'deep-freeze';
 import rootReducer from '../../src/reducers/rootReducer';
 import * as actionTypes from '../../src/constants/actionTypes';
 
@@ -44,6 +45,18 @@ describe('rootReducer', () => {
 
         it('updates the data source', () => {
             assert.equal(actualState.dataSourceId, 'data1');
+        });
+
+        it('does not modify state', () => {
+            const originalState = getInitialState();
+            deepFreeze(originalState);
+
+            assert.doesNotThrow(() => {
+                rootReducer(originalState, {
+                    type: actionTypes.SELECT_DATA_SOURCE,
+                    dataSourceId: 'data1'
+                });
+            });
         });
     });
 });
